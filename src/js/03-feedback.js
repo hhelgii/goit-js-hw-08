@@ -19,7 +19,12 @@ function inputForm() {
         email:form.elements.email.value,
         message:form.elements.message.value
     }
-    localStorage.setItem(STORAGE_KEY,JSON.stringify(formValues));
+    try{
+        localStorage.setItem(STORAGE_KEY,JSON.stringify(formValues));
+    }catch(error){
+        console.error(error.message)
+    }
+    
 }
 function submitForm(event) {
     event.preventDefault();
