@@ -16,8 +16,8 @@ function fillForm() {
 function inputForm() {
     
     formValues={
-        email:form.elements.email.value,
-        message:form.elements.message.value
+        email:form.elements.email.value.trim(),
+        message:form.elements.message.value.trim()
     }
     try{
         localStorage.setItem(STORAGE_KEY,JSON.stringify(formValues));
